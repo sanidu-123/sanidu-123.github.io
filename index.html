@@ -11,6 +11,30 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.2
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(
+    entries,
+    observer
+  ) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
 </head>
 <body>
 
@@ -46,7 +70,7 @@
 </section>
 
 <!-- About -->
-<section id="about">
+<section id="about" class="fade-in">
   <div class="container">
     <div class="section-title">
       <h2>About Me</h2>
@@ -60,7 +84,7 @@
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="fade-in">
   <div class="container">
     <div class="section-title">
       <h2>Projects</h2>
@@ -69,7 +93,7 @@
     <div class="row g-4">
 
       <div class="col-md-4">
-        <div class="card h-100 p-3">
+        <div class="card h-100 p-3 fade-in">
           <h5 class="card-title">
             <i class="fas fa-chart-line"></i> World Population Analysis
           </h5>
@@ -86,7 +110,7 @@
       </div>
 
       <div class="col-md-4">
-        <div class="card h-100 p-3">
+        <div class="card h-100 p-3 fade-in">
           <h5 class="card-title">
             <i class="fas fa-database"></i> Job Market Analysis
           </h5>
@@ -103,7 +127,7 @@
       </div>
 
       <div class="col-md-4">
-        <div class="card h-100 p-3">
+        <div class="card h-100 p-3 fade-in">
           <h5 class="card-title">
             <i class="fas fa-brain"></i> Machine Learning Project
           </h5>
@@ -124,7 +148,7 @@
 </section>
 
 <!-- Resume -->
-<section id="resume" class="text-center">
+<section id="resume" class="class="fade-in text-center">
   <div class="container">
     <div class="section-title">
       <h2>Resume</h2>
@@ -136,7 +160,7 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="text-center">
+<section id="contact" class="fade-in text-center">
   <div class="container">
     <div class="section-title">
       <h2>Contact</h2>
