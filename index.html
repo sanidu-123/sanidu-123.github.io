@@ -215,9 +215,54 @@
             The ICC cricket rankings dataset provides the latest rankings of participating teams, including their positions and corresponding points. 
             This information offers insights into the relative strengths of teams at the time of each match.
           </p>
-          <a href="https://github.com/sanidu-123" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+          <a href="https://github.com/sanidu-123/t20-World-cup-2024-winner-prediction.git" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-github"></i> GitHub</a>
         </div>
       </div>
+
+      <div  class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="card p-4">
+          <h5>World Population & Demographic Analysis - Power BI</h5>
+          <p>This project analyzes global, regional, and country-level population trends using demographic and economic indicators from 1960 to 2023. 
+            All the data were downloaded and retrieved through APIs from the World Bank's data.org. 
+            The dashboards provide interactive insights into population growth, demographic transitions, 
+            socio-economic patterns, and the current state of each country's population trajectory.
+          </p>
+          <a href="https://github.com/sanidu-123/World-Population-PowerBI-dashboard.git" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div  class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="card p-4">
+          <h5>Image Recognition System by CNN</h5>
+          <p>An advanced Image Recognition System using Convolutional 
+            Neural Networks (CNN) with Python, Flask, and TensorFlow Using Cifar -10 dataset. Use real-time classification, which can classify 
+            multiple images simultaneously, and classify 10 classes. performance metrics, including throughput, latency, and processing time. 
+          </p>
+          <a href="https://github.com/DATDSG/SF_Project.git" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 extra-project" data-aos="fade-up">
+        <div class="card p-4">
+          <h5>Sentimental Analysis</h5>
+          <p>This dashboard analyzes text sentiment in real-time, classifying input as positive, negative, or neutral. 
+            It provides a comprehensive visualization of results through interactive charts, word clouds, and time-based analytics. 
+            The application stores all analyses in a database to track sentiment patterns over time. Real-time sentiment analysis,
+            Multi-class classification, interactive visualizations, and responsive designs were included.
+          </p>
+          <a href="GITHUB_LINK" class="btn btn-outline-primary btn-sm" target="_blank">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+
+      <div class="text-center mt-4">
+        <button id="toggle-projects" class="btn btn-primary">
+          Show More Projects
+        </button>
+      </div>
+
 
     </div>
   </div>
@@ -325,6 +370,21 @@
     });
   });
 </script>
+<script>
+  const toggleBtn = document.getElementById('toggle-projects');
+  const extraProjects = document.querySelectorAll('.extra-project');
+
+  toggleBtn.addEventListener('click', () => {
+    const isHidden = extraProjects[0].style.display === 'none' || extraProjects[0].style.display === '';
+    
+    extraProjects.forEach(proj => {
+      proj.style.display = isHidden ? 'block' : 'none';
+    });
+
+    toggleBtn.textContent = isHidden ? 'Show Less Projects' : 'Show More Projects';
+  });
+</script>
+
 
 </body>
 </html>
